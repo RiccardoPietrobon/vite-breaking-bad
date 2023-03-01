@@ -16,7 +16,11 @@ export default {
 <style lang="scss" scoped>
 @use "../components/scss/partials/style.scss" as *;
 
-img {
-    height: 20px;
+nav {
+    background-color: white;
+
+    img {
+        height: 20px;
+    }
 }
 </style>
