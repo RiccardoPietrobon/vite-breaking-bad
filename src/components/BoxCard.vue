@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div class="p-5 container">
+    <div class="p-5 container" v-if="!store.isloading">
 
         <nav>
             <h3 class="fw-bold p-3">Found Cards</h3>
@@ -31,6 +31,11 @@ export default {
         </div>
 
 
+    </div>
+
+    <div class="overlay" v-else>
+
+        <h2>Page is loading...</h2>
     </div>
 </template>
 
@@ -47,6 +52,15 @@ div {
         color: white;
     }
 
-
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>

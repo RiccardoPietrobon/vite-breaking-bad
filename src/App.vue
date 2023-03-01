@@ -14,15 +14,24 @@ export default {
   },
 
   created() {
+    store.isloading = true;
     /* faccio la richiesta */
     axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0")
+      .get(store.endpoint)
       /* prendo la richiesta */
       .then((response) => {
-        console.log(response);
         /* riempio l'array */
         store.cardsarray = response.data.data;
-      });
+      })
+
+      /* in questo caso svuota l'array se ci sono errori */
+      .catch((error) => {
+        store.cardsarray = [];
+        console.error(error);
+      })
+      .finally(() => {
+        store.isloading = false;
+      })
   },
 
   components: { JugiMain, NavBar },
