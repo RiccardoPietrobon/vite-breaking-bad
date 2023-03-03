@@ -28,12 +28,6 @@ export default {
                     store.cardsarray = response.data.data;
                     console.log(response)
                 })
-                .then((responseNum) => {
-                    /* riempio l'oggetto che mi serve per il numero di carte */
-                    store.cardnumber = responseNum.data.data;
-                    console.log(responseNum)
-                })
-
                 /* in questo caso svuota l'array se ci sono errori */
                 // .catch((error) => {
                 //     store.cardsarray = [];
@@ -62,7 +56,7 @@ export default {
     <div class="p-5 container" v-if="!store.isloading">
 
         <nav>
-            <h3 class="fw-bold p-3">Found {{ store }} Cards</h3>
+            <h3 class="fw-bold p-3">Found {{ store.cardsarray.length }} Cards</h3>
 
         </nav>
 
