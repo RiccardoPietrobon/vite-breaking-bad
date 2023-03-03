@@ -30,7 +30,7 @@ export default {
     background-color: $bg-1;
 
     img {
-        max-width: 170px;
+        width: 100%;
     }
 
     h3 {
